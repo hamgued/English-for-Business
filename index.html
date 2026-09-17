@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>English for Business &mdash; Course Videos</title>
+<title>English for Business</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -18,77 +18,36 @@
     --lab-footer-text: #cccccc;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
-    background: var(--lab-grey-light);
-    color: var(--lab-black);
-    line-height: 1.55;
-  }
+  body { font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif; background: var(--lab-grey-light); color: var(--lab-black); line-height: 1.55; }
   a { color: var(--lab-teal); }
-
-  header {
-    position: sticky; top: 0; z-index: 10;
-    background: var(--lab-white);
-    border-bottom: 1px solid var(--lab-grey-border);
-    padding: 14px 24px;
-  }
   .wrap { max-width: 1200px; margin: 0 auto; }
-  .header-inner { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
-  .header-title { font-size: 0.875rem; font-weight: 700; }
-  .credit { font-size: 0.875rem; color: var(--lab-grey-mid); }
-  .credit a { color: var(--lab-grey-mid); }
+  .site-nav { background: var(--lab-black); }
+  .site-nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: stretch; gap: 16px; flex-wrap: wrap; }
+  .site-nav .brand { display: flex; align-items: center; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lab-white); text-decoration: none; padding: 12px 0; }
+  .site-nav .links { display: flex; }
+  .site-nav .links a { display: flex; align-items: center; padding: 12px 16px; font-size: 0.9rem; font-weight: 700; color: var(--lab-footer-text); text-decoration: none; border-bottom: 3px solid transparent; }
+  .site-nav .links a:hover { color: var(--lab-white); background: #2a2a2a; }
+  .site-nav .links a.here { color: var(--lab-white); border-bottom-color: var(--lab-teal); }
 
   .hero { background: var(--lab-teal); color: var(--lab-white); padding: 64px 24px; }
   .hero h1 { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.02em; }
-  .hero p.lead { font-size: 1.125rem; margin-top: 14px; max-width: 760px; }
-  .hero .credit, .hero .credit a { color: var(--lab-white); }
-  .hero .credit { margin-top: 24px; }
+  .hero p { font-size: 1.125rem; margin-top: 14px; max-width: 760px; }
 
   main { padding: 64px 24px; }
-  .note {
-    background: var(--lab-teal-light);
-    border-left: 4px solid var(--lab-teal);
-    padding: 16px 18px; margin-bottom: 32px; font-size: 0.95rem;
-  }
-  .section-label {
-    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.07em; color: var(--lab-grey-mid);
-    padding-bottom: 6px; border-bottom: 2px solid var(--lab-teal);
-    margin-bottom: 20px;
-  }
+  .section-label { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--lab-grey-mid); padding-bottom: 6px; border-bottom: 2px solid var(--lab-teal); margin-bottom: 20px; }
   .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .card { background: var(--lab-white); border: 1px solid var(--lab-grey-border); padding: 24px; }
-  .card-num {
-    display: inline-block; background: var(--lab-teal); color: var(--lab-white);
-    font-size: 0.8rem; font-weight: 700; padding: 3px 10px; margin-bottom: 10px;
-  }
-  .card h2 { font-size: 1.25rem; font-weight: 700; }
-  .card p.sub { font-size: 0.95rem; color: var(--lab-grey-mid); margin-top: 6px; }
-
-  .player { position: relative; width: 100%; aspect-ratio: 16 / 9; margin-top: 16px; background: var(--lab-black); }
-  .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-  .facade {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    border: 0; padding: 0; cursor: pointer; background: var(--lab-black);
-    display: block; font-family: inherit;
-  }
-  .facade img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .facade .play {
-    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    background: var(--lab-teal); color: var(--lab-white);
-    font-size: 0.95rem; font-weight: 700; padding: 12px 22px;
-  }
-  .facade:hover .play, .facade:focus-visible .play { background: #057a7a; }
-  .facade:focus-visible { outline: 3px solid var(--lab-teal); outline-offset: 2px; }
-
-  .card-links { margin-top: 14px; font-size: 0.875rem; }
-  .card-links a { font-weight: 700; }
-  .card.book { margin-top: 0; }
-  .btn {
-    display: inline-block; background: var(--lab-teal); color: var(--lab-white) !important;
-    font-size: 0.95rem; font-weight: 700; padding: 12px 22px; text-decoration: none; margin-top: 4px;
-  }
+  .card { background: var(--lab-white); border: 1px solid var(--lab-grey-border); padding: 24px; display: flex; flex-direction: column; }
+  .card h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.015em; }
+  .card p { font-size: 1rem; color: var(--lab-grey-mid); margin-top: 10px; }
+  .card ul { margin: 14px 0 0 20px; font-size: 0.95rem; color: var(--lab-grey-mid); }
+  .card li { margin-bottom: 4px; }
+  .card .spacer { flex: 1; min-height: 18px; }
+  .btn { align-self: flex-start; display: inline-block; background: var(--lab-teal); color: var(--lab-white); font-size: 0.95rem; font-weight: 700; padding: 12px 22px; text-decoration: none; }
   .btn:hover { background: #057a7a; }
+  .credits { background: var(--lab-white); border: 1px solid var(--lab-grey-border); padding: 24px; font-size: 0.95rem; }
+  .credits p { margin-bottom: 10px; }
+  .credits p:last-child { margin-bottom: 0; }
+  .credits-block { margin-top: 48px; }
 
   footer { background: var(--lab-footer-bg); color: var(--lab-footer-text); padding: 40px 24px; font-size: 0.875rem; line-height: 1.7; }
   footer a { color: var(--lab-white); }
@@ -103,140 +62,72 @@
 </head>
 <body>
 
-<header>
-  <div class="wrap header-inner">
-    <span class="header-title">English for Business &middot; Course videos &middot; <a href="english-for-business-coursebook.html">Coursebook</a></span>
-    <span class="credit">Designed by <a href="https://www.linkedin.com/in/hagu1/" target="_blank" rel="noopener">Hamid Guedra</a> (Language Centre, <a href="https://lab.fi/en" target="_blank" rel="noopener">LAB University of Applied Sciences</a>)</span>
+<nav class="site-nav no-print">
+  <div class="site-nav-inner">
+    <a class="brand" href="index.html">English for Business</a>
+    <span class="links">
+      <a href="index.html" class="here">Main page</a>
+      <a href="videos.html">Videos</a>
+      <a href="english-for-business-coursebook.html">Coursebook</a>
+    </span>
   </div>
-</header>
+</nav>
 
 <div class="hero">
   <div class="wrap">
     <h1>English for Business</h1>
-    <p class="lead">The course videos, one per module. Watch them in order, or go straight to the one you need &mdash; each video goes with the matching module in the coursebook.</p>
-    <p class="credit">Designed by <a href="https://www.linkedin.com/in/hagu1/" target="_blank" rel="noopener">Hamid Guedra</a> (Language Centre, <a href="https://lab.fi/en" target="_blank" rel="noopener">LAB University of Applied Sciences</a>)</p>
+    <p>Course materials for the English for Business course at LAB University of Applied Sciences: the module videos, and the coursebook that goes with them.</p>
   </div>
 </div>
 
 <main>
   <div class="wrap">
-    <div class="note"><strong>How to use these.</strong> Each video introduces one module. Watch the video first, then work through that module in the <a href="english-for-business-coursebook.html">coursebook</a> &mdash; the vocabulary and phrases in the video are all listed there.</div>
-
-    <p class="section-label">The videos</p>
+    <p class="section-label">The two parts</p>
     <div class="grid">
 
       <div class="card">
-        <span class="card-num">1</span>
-        <h2>Business English basics</h2>
-        <p class="sub">What it is, where it is used, and why the way you say things matters</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="lsjlUsybsVE" aria-label="Play: Business English basics">
-            <img src="https://i.ytimg.com/vi/lsjlUsybsVE/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/lsjlUsybsVE" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <h2>Course videos</h2>
+        <p>One video per module. Watch a video first to get the idea, then work through the matching module in the coursebook.</p>
+        <ul>
+          <li>Six videos, hosted on YouTube</li>
+          <li>Players load only when you press Play</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="btn" href="videos.html">Go to the videos</a>
       </div>
 
       <div class="card">
-        <span class="card-num">2</span>
-        <h2>Professional emails</h2>
-        <p class="sub">The most common written task in any workplace</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="gopOw9doOzM" aria-label="Play: Professional emails">
-            <img src="https://i.ytimg.com/vi/gopOw9doOzM/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/gopOw9doOzM" target="_blank" rel="noopener">Watch on YouTube</a></p>
-      </div>
-
-      <div class="card">
-        <span class="card-num">3</span>
-        <h2>Business meetings</h2>
-        <p class="sub">Taking part, chairing, deciding, and writing it down</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="tnwtOSMHi2o" aria-label="Play: Business meetings">
-            <img src="https://i.ytimg.com/vi/tnwtOSMHi2o/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/tnwtOSMHi2o" target="_blank" rel="noopener">Watch on YouTube</a></p>
-      </div>
-
-      <div class="card">
-        <span class="card-num">4</span>
-        <h2>Charts, graphs and data</h2>
-        <p class="sub">Choosing the right visual, and describing it in English</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="ZTYtjHe5T0s" aria-label="Play: Charts, graphs and data">
-            <img src="https://i.ytimg.com/vi/ZTYtjHe5T0s/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/ZTYtjHe5T0s" target="_blank" rel="noopener">Watch on YouTube</a></p>
-      </div>
-
-      <div class="card">
-        <span class="card-num">6</span>
-        <h2>Pitching your idea</h2>
-        <p class="sub">Turning a business model into a three-minute talk</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="x03VbbVBa3Y" aria-label="Play: Pitching your idea">
-            <img src="https://i.ytimg.com/vi/x03VbbVBa3Y/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/x03VbbVBa3Y" target="_blank" rel="noopener">Watch on YouTube</a></p>
-      </div>
-
-      <div class="card">
-        <span class="card-num">7</span>
-        <h2>Getting a job and working with others</h2>
-        <p class="sub">Applications, skills, interviews, business fairs, and feedback</p>
-        <div class="player">
-          <button type="button" class="facade" data-id="6wK23eTXuqU" aria-label="Play: Getting a job and working with others">
-            <img src="https://i.ytimg.com/vi/6wK23eTXuqU/hqdefault.jpg" alt="" loading="lazy">
-            <span class="play">Play video</span>
-          </button>
-        </div>
-        <p class="card-links"><a href="https://youtu.be/6wK23eTXuqU" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <h2>Coursebook</h2>
+        <p>The reference for the whole course: seven modules of topics, phrases and examples, with vocabulary in English and Finnish.</p>
+        <ul>
+          <li>Search across every module, phrase and word</li>
+          <li>Practice quizzes with an explanation for every answer</li>
+          <li>Printable, or saveable as a PDF</li>
+        </ul>
+        <div class="spacer"></div>
+        <a class="btn" href="english-for-business-coursebook.html">Open the coursebook</a>
       </div>
 
     </div>
 
-    <p class="section-label" style="margin-top: 48px;">The coursebook</p>
-    <div class="card book">
-      <h2>English for Business &mdash; Coursebook</h2>
-      <p class="sub">All seven modules, the topics behind every video, phrases, examples, the EN&ndash;FI word list and the practice quizzes. Searchable, and printable as a PDF.</p>
-      <p class="card-links"><a class="btn" href="english-for-business-coursebook.html">Open the coursebook</a></p>
+    <div class="credits-block">
+      <p class="section-label">Credits and sources</p>
+      <div class="credits">
+      <p>Designed by <a href="https://www.linkedin.com/in/hagu1/" target="_blank" rel="noopener">Hamid Guedra</a> (Language Centre, <a href="https://lab.fi/en" target="_blank" rel="noopener">LAB University of Applied Sciences</a> / <a href="https://www.lut.fi/en" target="_blank" rel="noopener">LUT University</a>)</p>
+      <p>The ANSVA pitch model in Module 6 is based on Monroe&rsquo;s Motivated Sequence (Alan H. Monroe, <em>Principles and Types of Speech</em>, 1935): Attention, Need, Satisfaction (here: Solution), Visualization, Action. The Business Model Canvas in Module 5 is based on the framework created by Alexander Osterwalder and Yves Pigneur.</p>
+      <p>Some content adapted from <em>English for Work (Business) MASTER</em> by Tessa Laba.</p>
+      <p>Created with Claude Opus 5 and Fable 5.1.</p>
+      </div>
     </div>
   </div>
 </main>
 
 <footer>
   <div class="wrap">
-    <p>English for Business &mdash; course videos. Designed by <a href="https://www.linkedin.com/in/hagu1/" target="_blank" rel="noopener">Hamid Guedra</a> (Language Centre, <a href="https://lab.fi/en" target="_blank" rel="noopener">LAB University of Applied Sciences</a>) &middot; <a href="https://www.lut.fi/en" target="_blank" rel="noopener">LUT University</a></p>
-    <p>Videos are hosted on YouTube. Players load only when you click Play. The <a href="english-for-business-coursebook.html">coursebook</a> works offline once the page has loaded.</p>
+    <p><a href="videos.html">Course videos</a> &middot; <a href="english-for-business-coursebook.html">Coursebook</a></p>
+    <p>Designed by <a href="https://www.linkedin.com/in/hagu1/" target="_blank" rel="noopener">Hamid Guedra</a> (Language Centre, <a href="https://lab.fi/en" target="_blank" rel="noopener">LAB University of Applied Sciences</a>) &middot; <a href="https://www.lut.fi/en" target="_blank" rel="noopener">LUT University</a></p>
   </div>
 </footer>
 
-<script>
-(function () {
-  'use strict';
-  document.querySelectorAll('.facade').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var id = btn.dataset.id;
-      var frame = document.createElement('iframe');
-      frame.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
-      frame.title = btn.getAttribute('aria-label').replace('Play: ', '');
-      frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      frame.allowFullscreen = true;
-      btn.parentElement.appendChild(frame);
-      btn.remove();
-    });
-  });
-})();
-</script>
 </body>
 </html>
